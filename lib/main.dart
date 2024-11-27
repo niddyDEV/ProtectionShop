@@ -38,7 +38,7 @@ class _MainPageState extends State<MainPage> {
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     FavoritesPage(),
-    CartPage(), // Добавляем новую страницу
+    CartPage(),
     ProfilePage(),
   ];
 
