@@ -1,16 +1,14 @@
-# prk3_3_3
+# ПКС 9 практика
 
-A new Flutter project.
+Студент: Трунин Кирилл, ЭФБО-04-22
 
-## Getting Started
+## Изменения  
+Переделан дизайн(цветокорекция элементов) + взаимодействие страничек через api
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/8f1e5386-f025-4b10-bcd5-fd3049dbef6a
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://github.com/user-attachments/assets/bad67e9a-3118-4d79-8fe8-60591fff9e30
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
