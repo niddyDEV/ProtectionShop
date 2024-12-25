@@ -32,10 +32,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final productManager = Provider.of<ProductManager>(context);
     return Scaffold(
+      backgroundColor: Colors.black38, // Устанавливаем красный цвет фона
       appBar: AppBar(
         title: const Center(
           child: Text(
-            "Protection store",
+            "Protection Store",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               letterSpacing: 6,
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.greenAccent,
         onPressed: () => navigateToAddProductPage(context),
         child: const Icon(Icons.add_box_rounded),
         tooltip: "Добавить товар",
