@@ -1,16 +1,14 @@
-# prk3_3_3
+# Практика 10 ПКС
 
-A new Flutter project.
+Студент: Трунин Кирилл, ЭФБО-04-22
 
-## Getting Started
+## Изменения
+Взаимодействие теперь производится через базу данных, бд реализована через PostreSQL
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/10412a12-1363-4d32-8950-d617b25225b4
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![image](https://github.com/user-attachments/assets/7980b248-5692-4cde-a286-c1d3c49d0383)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
