@@ -36,7 +36,7 @@ class _AddProductPageState extends State<AddProductPage> {
 
     if (productTitle.isNotEmpty && productImage.isNotEmpty && productPrice > 0 && productAbout.isNotEmpty && productSpecifications.isNotEmpty) {
       final newProduct = Product(
-        productId: 0,
+        productId: 0, // ID будет назначен на сервере
         productTitle: productTitle,
         productImage: productImage,
         productName: productTitle,

@@ -184,7 +184,7 @@ class _ProductPageState extends State<ProductPage> {
                       ),
                     ),
                     padding: MaterialStateProperty.all(const EdgeInsets.all(14)),
-                    backgroundColor: MaterialStateProperty.all(Colors.black12),
+                    backgroundColor: MaterialStateProperty.all(Colors.greenAccent),
                     foregroundColor: MaterialStateProperty.all(Colors.black),
                     textStyle: MaterialStateProperty.all(
                       const TextStyle(

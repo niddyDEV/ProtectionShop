@@ -32,12 +32,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final productManager = Provider.of<ProductManager>(context);
     return Scaffold(
-      backgroundColor: Colors.black38, // Устанавливаем красный цвет фона
       appBar: AppBar(
         title: const Center(
           child: Text(
-            "Protection Store",
+            "Protection Shop",
             style: TextStyle(
+              backgroundColor: Colors.greenAccent,
               fontWeight: FontWeight.bold,
               letterSpacing: 6,
               fontSize: 30,

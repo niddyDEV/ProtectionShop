@@ -17,8 +17,6 @@ type Product struct {
 	Description    string
 	Specifications string
 	Quantity       int
-	IsFavorite     bool
-	InCart         bool
 }
 
 // Пример списка продуктов
@@ -201,114 +199,12 @@ func updateProductHandler(w http.ResponseWriter, r *http.Request) {
 	http.Error(w, "Product not found", http.StatusNotFound)
 }
 
-// Обновление количества товара по ID
-func updateProductQuantityHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPut {
-		http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
-		return
-	}
-
-	// Получаем ID из URL
-	idStr := r.URL.Path[len("/products/quantity/"):]
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		http.Error(w, "Invalid Product ID", http.StatusBadRequest)
-		return
-	}
-
-	// Декодируем обновлённое количество
-	var updatedQuantity struct {
-		Quantity int `json:"quantity"`
-	}
-	err = json.NewDecoder(r.Body).Decode(&updatedQuantity)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-
-	// Ищем продукт для обновления
-	for i, product := range products {
-		if product.ID == id {
-			products[i].Quantity = updatedQuantity.Quantity
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(products[i])
-			return
-		}
-	}
-
-	// Если продукт не найден
-	http.Error(w, "Product not found", http.StatusNotFound)
-}
-
-// Добавление или удаление товара из избранного
-func toggleFavoriteHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
-		return
-	}
-
-	// Получаем ID из URL
-	idStr := r.URL.Path[len("/products/favorite/"):]
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		http.Error(w, "Invalid Product ID", http.StatusBadRequest)
-		return
-	}
-
-	// Ищем продукт
-	for i, product := range products {
-		if product.ID == id {
-			// Переключаем статус избранного
-			products[i].IsFavorite = !products[i].IsFavorite
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(products[i])
-			return
-		}
-	}
-
-	// Если продукт не найден
-	http.Error(w, "Product not found", http.StatusNotFound)
-}
-
-// Обновление флага InCart (добавление/удаление из корзины)
-func toggleCartHandler(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
-		return
-	}
-
-	// Получаем ID из URL
-	idStr := r.URL.Path[len("/products/cart/"):]
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		http.Error(w, "Invalid Product ID", http.StatusBadRequest)
-		return
-	}
-
-	// Ищем продукт
-	for i, product := range products {
-		if product.ID == id {
-			// Переключаем статус InCart
-			products[i].InCart = !products[i].InCart
-			w.Header().Set("Content-Type", "application/json")
-			json.NewEncoder(w).Encode(products[i])
-			return
-		}
-	}
-
-	// Если продукт не найден
-	http.Error(w, "Product not found", http.StatusNotFound)
-}
-
 func main() {
-	http.HandleFunc("/products", getProductsHandler)                     // Получить все продукты
-	http.HandleFunc("/products/create", createProductHandler)            // Создать продукт
-	http.HandleFunc("/products/", getProductByIDHandler)                 // Получить продукт по ID
-	http.HandleFunc("/products/update/", updateProductHandler)           // Обновить продукт
-	http.HandleFunc("/products/delete/", deleteProductHandler)           // Удалить продукт
-	http.HandleFunc("/products/quantity/", updateProductQuantityHandler) // Обновить количество товара
-	http.HandleFunc("/products/favorite/", toggleFavoriteHandler)        // Добавить/удалить из избранного
-	http.HandleFunc("/products/cart/", toggleCartHandler)                // Добавить/удалить из корзины
+	http.HandleFunc("/products", getProductsHandler)           // Получить все продукты
+	http.HandleFunc("/products/create", createProductHandler)  // Создать продукт
+	http.HandleFunc("/products/", getProductByIDHandler)       // Получить продукт по ID
+	http.HandleFunc("/products/update/", updateProductHandler) // Обновить продукт
+	http.HandleFunc("/products/delete/", deleteProductHandler) // Удалить продукт
 
 	fmt.Println("Server is running on http://localhost:8080 !")
 	http.ListenAndServe(":8080", nil)

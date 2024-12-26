@@ -7,40 +7,43 @@ class Product {
   final String productAbout;
   final String productSpecifications;
   int quantity;
+  bool isFavorite;
   bool inCart;
 
   Product({required this.productId, required this.productTitle,
     required this.productImage, required this.productName,
     required this.productPrice, required this.productAbout,
     required this.productSpecifications, this.quantity = 0,
-    this.inCart = false,
+    this.isFavorite = false, this.inCart = false,
   });
 
   Map<String, dynamic> toJson() {
     return {
-      'ID': productId,
-      'Title': productTitle,
-      'ImageURL': productImage,
-      'Name': productName,
-      'Price': productPrice,
-      'Description': productAbout,
-      'Specifications': productSpecifications,
-      'Quantity': quantity,
-      'InCart': inCart,
+      'id': productId,
+      'title': productTitle,
+      'image_url': productImage,
+      'name': productName,
+      'price': productPrice,
+      'description': productAbout,
+      'specifications': productSpecifications,
+      'quantity': quantity,
+      'is_favourite' : isFavorite,
+      'in_cart': inCart,
     };
   }
 
-  factory Product.fromJson(Map<String, dynamic> json){
+  factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
-      productId: json['ID'],
-      productTitle: json['Title'],
-      productImage: json['ImageURL'],
-      productName: json['Name'],
-      productPrice: json['Price'],
-      productAbout: json['Description'],
-      productSpecifications: json['Specifications'],
-      quantity: json['Quantity'],
-      inCart: json['InCart'],
+      productId: json['id'] ?? 0,
+      productTitle: json['title'] ?? '',
+      productImage: json['image_url'] ?? '',
+      productName: json['name'] ?? '',
+      productPrice: json['price'] ?? 0,
+      productAbout: json['description'] ?? '',
+      productSpecifications: json['specifications'] ?? '',
+      quantity: json['quantity'] ?? 0,
+      isFavorite: json['is_favourite'] ?? false,
+      inCart: json['in_cart'] ?? false,
     );
   }
 }
