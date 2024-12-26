@@ -1,16 +1,12 @@
-# prk3_3_3
+# Практика 11 ПКС
 
-A new Flutter project.
+Студент: Трунин Кирилл, ЭФБО-04-22
 
-## Getting Started
+## Изменения  
+Написаны функции входа и регистрации для использования приложения.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+https://github.com/user-attachments/assets/3442bd4d-f178-4b63-8bdf-c3d3f70c8f09
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
