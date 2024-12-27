@@ -5,9 +5,21 @@ class ApiService {
   final Dio _dio = Dio();
 
   // Получение списка продуктов
-  Future<List<Product>> getProducts() async {
+  Future<List<Product>> getProducts({
+    String searchQuery = "",
+    double minPrice = 0,
+    double maxPrice = 1000000,
+    String sortBy = "",
+    String sortOrder = "asc",
+  }) async {
     try {
-      final response = await _dio.get('http://10.0.2.2:8080/products');
+      final response = await _dio.get('http://10.0.2.2:8080/products', queryParameters: {
+        'search': searchQuery,
+        'min_price': minPrice,
+        'max_price': maxPrice,
+        'sort_by': sortBy,
+        'sort_order': sortOrder,
+      });
       if (response.statusCode == 200) {
         List<Product> products = (response.data as List)
             .map((product) => Product.fromJson(product))
@@ -20,6 +32,7 @@ class ApiService {
       throw Exception('Error fetching products: $e');
     }
   }
+
 
   // Получение продукта по ID
   Future<Product> getProductById(int id) async {
