@@ -1,16 +1,12 @@
-# prk3_3_3
+# 12 практика ПКС
 
-A new Flutter project.
+Студент: Трунин Кирилл, ЭФБО-04-22
 
-## Getting Started
+## Изменения  
+Добавлен функционал фильтрации товаров
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://github.com/user-attachments/assets/c5f4d820-3c3b-49de-a0b5-185e6f856a24
+
